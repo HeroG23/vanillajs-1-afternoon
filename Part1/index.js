@@ -22,7 +22,7 @@ function play(clickedId) {
   const topMiddle = board[1];
   const topRight = board[2];
   const middleLeft = board[3];
-  const middleMiddle = board[4];
+  const middle = board[4];
   const middleRight = board[5];
   const bottomLeft = board[6];
   const bottomMiddle = board[7];
@@ -31,28 +31,28 @@ function play(clickedId) {
   if (topLeft !== undefined && topLeft === topMiddle && topLeft === topRight) {
     alert(`${topLeft} is the winner!`);
   }
-  if (middleLeft !== undefined && middleLeft === middleMiddle && middleLeft === middleRight) {
+  if (middleLeft !== undefined && middleLeft === middle && middleLeft === middleRight) {
     alert(`${middleLeft} is the winner`);
-    return;
+    return location.reload();
   } else if (bottomLeft !== undefined && bottomLeft === bottomMiddle && bottomLeft === bottomRight) {
     alert(`${bottomLeft} is the winner`);
-    return;
+    return location.reload();
   } else if (topLeft !== undefined && topLeft === middleLeft && topLeft === bottomLeft) {
     alert(`${topLeft} is the winner`);
-    return;
-  } else if (topMiddle !== undefined && topMiddle === middleMiddle && topMiddle === bottomMiddle) {
+    return location.reload();
+  } else if (topMiddle !== undefined && topMiddle === middle && topMiddle === bottomMiddle) {
     alert(`${topMiddle} is the winner`);
-    return;
+    return location.reload();
   } else if (topRight !== undefined && topRight === middleRight && topRight === bottomRight) {
     alert(`${topRight} is the winner`);
-    return;
-  } else if (topLeft !== undefined && topLeft === middleMiddle && topLeft === bottomRight) {
+    return location.reload();
+  } else if (topLeft !== undefined && topLeft === middle && topLeft === bottomRight) {
     alert(`${topLeft} is the winner`);
-    return;
+    return location.reload();
   }
-  else if (bottomLeft !== undefined && bottomLeft === middleMiddle && bottomLeft === topRight) {
+  else if (bottomLeft !== undefined && bottomLeft === middle && bottomLeft === topRight) {
     alert(`${bottomLeft} is the winner`);
-    return;
+    return location.reload();
   }
   
   let boardFull = true;
@@ -63,5 +63,10 @@ function play(clickedId) {
   }
   if (boardFull === true) {
     alert("Cat's game, there is no winner");
+    return location.reload();
   }return boardFull
+}
+
+const reset = () => {
+  location.reload()
 }
